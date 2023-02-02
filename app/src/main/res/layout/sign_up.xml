@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/ivlogo"
+        android:id="@+id/ivLogo"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="52dp"
@@ -16,31 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <!--   <TextView
-           android:id="@+id/tvfirstname"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginLeft="45dp"
-           android:layout_marginTop="24dp"
-           android:text="First name"
-           android:textColor="@color/black"
-           android:textSize="18sp"
-           android:textStyle="bold"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintHorizontal_bias="0.113"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/ivlogo" />-->
-
-    <!-- <EditText
-         android:id="@+id/etfirstname"
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         android:layout_marginLeft="65dp"
-         android:background="@drawable/edit_text_border"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/tvfirstname" />
- -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvFirstName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -53,16 +28,15 @@
         android:hint="First name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivlogo">
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo">
 
-        <!--this is the actual edit text which takes the input-->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivlogo" />
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,7 +54,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFirstName">
 
-        <!--this is the actual edit text which takes the input-->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etLastName"
             android:layout_width="match_parent"
@@ -105,7 +78,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLastName">
 
-        <!--this is the actual edit text which takes the input-->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
@@ -130,7 +102,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail">
 
-        <!--this is the actual edit text which takes the input-->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
@@ -141,92 +112,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--  <TextView
-          android:id="@+id/tvlastname"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="45dp"
-          android:layout_marginTop="24dp"
-          android:text="Last name"
-          android:textColor="@color/black"
-          android:textSize="18sp"
-          android:textStyle="bold"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.113"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/etfirstname" />
 
-      <EditText
-          android:id="@+id/etlastname"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="80dp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/tvlastname" />
-
-      <TextView
-          android:id="@+id/tvemail"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="45dp"
-          android:layout_marginTop="24dp"
-          android:text="Email"
-          android:textColor="@color/black"
-          android:textSize="18sp"
-          android:textStyle="bold"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.113"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/etlastname" />
-
-      <EditText
-          android:id="@+id/etemail"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="80dp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/tvemail" />
-
-      <TextView
-          android:id="@+id/tvpassword"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="45dp"
-          android:layout_marginTop="24dp"
-          android:text="Password"
-          android:textColor="@color/black"
-          android:textSize="18sp"
-          android:textStyle="bold"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.113"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/etemail" />
-
-      <EditText
-          android:id="@+id/etpassword"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="80dp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/tvpassword" />
-
-      <TextView
-          android:id="@+id/tvalreadymember"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="2dp"
-          android:gravity="center"
-          android:text="Already a member? Login"
-          android:textColor="@color/black"
-          android:textSize="10sp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.113"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/etpassword" />
-  -->
     <TextView
         android:id="@+id/tvalreadymember"
         android:layout_width="wrap_content"
@@ -245,13 +131,13 @@
         android:id="@+id/btsignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
         android:layout_marginStart="68dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="68dp"
+        android:background="@drawable/corner_radius"
+        android:backgroundTint="#14565e"
         android:text="SIGN UP"
         android:textColor="@color/white"
-        android:backgroundTint="#14565e"
-        android:background="@drawable/corner_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvalreadymember" />
@@ -266,8 +152,8 @@
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/dotted"
         android:layout_marginTop="65dp"
+        android:background="@drawable/dotted"
         app:layout_constraintBottom_toBottomOf="@+id/tvsignupwith"
         app:layout_constraintEnd_toEndOf="@+id/gl_left"
         app:layout_constraintHorizontal_bias="0.0"
@@ -299,30 +185,31 @@
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/dotted"
         android:layout_marginTop="65dp"
+        android:background="@drawable/dotted"
         app:layout_constraintBottom_toBottomOf="@+id/tvsignupwith"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/gl_right"
         app:layout_constraintTop_toBottomOf="@+id/btsignup"
         app:layout_constraintVertical_bias="1.0" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="6dp"
         android:layout_marginStart="88dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="88dp"
         android:backgroundTint="#14565e"
         android:drawableLeft="@drawable/google"
         android:text="Google Sign in"
         android:textAlignment="textStart"
-        app:layout_constraintTop_toBottomOf="@+id/tvsignupwith"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvsignupwith"
         tools:layout_editor_absoluteY="649dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
