@@ -10,6 +10,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="52dp"
+        android:contentDescription="Doctor's Logo"
         android:src="@drawable/medical_team"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +115,7 @@
 
 
     <TextView
-        android:id="@+id/tvalreadymember"
+        android:id="@+id/tvAlreadyMember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -128,7 +129,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btsignup"
+        android:id="@+id/btSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
@@ -140,10 +141,10 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvalreadymember" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAlreadyMember" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_left"
+        android:id="@+id/glLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -154,15 +155,15 @@
         android:layout_height="0dp"
         android:layout_marginTop="65dp"
         android:background="@drawable/dotted"
-        app:layout_constraintBottom_toBottomOf="@+id/tvsignupwith"
-        app:layout_constraintEnd_toEndOf="@+id/gl_left"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSignUpWith"
+        app:layout_constraintEnd_toEndOf="@+id/glLeft"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btsignup"
+        app:layout_constraintTop_toBottomOf="@+id/btSignUp"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/tvsignupwith"
+        android:id="@+id/tvSignUpWith"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -173,10 +174,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btsignup" />
+        app:layout_constraintTop_toBottomOf="@+id/btSignUp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_right"
+        android:id="@+id/glRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -187,11 +188,11 @@
         android:layout_height="0dp"
         android:layout_marginTop="65dp"
         android:background="@drawable/dotted"
-        app:layout_constraintBottom_toBottomOf="@+id/tvsignupwith"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSignUpWith"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/gl_right"
-        app:layout_constraintTop_toBottomOf="@+id/btsignup"
+        app:layout_constraintStart_toStartOf="@+id/glRight"
+        app:layout_constraintTop_toBottomOf="@+id/btSignUp"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -209,7 +210,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvsignupwith"
+        app:layout_constraintTop_toBottomOf="@+id/tvSignUpWith"
         tools:layout_editor_absoluteY="649dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
