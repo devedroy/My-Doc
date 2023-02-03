@@ -23,10 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:hint="First name"
+        android:hint="@string/first_name"
+        app:boxStrokeColor="@color/teal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivLogo">
@@ -35,6 +35,7 @@
             android:id="@+id/etFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
@@ -47,10 +48,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:hint="Last name"
+        android:hint="@string/last_name"
+        app:boxStrokeColor="@color/teal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFirstName">
@@ -71,10 +72,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:hint="Email"
+        android:hint="@string/email"
+        app:boxStrokeColor="@color/teal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLastName">
@@ -83,6 +84,7 @@
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
@@ -95,10 +97,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:hint="Password"
+        android:hint="@string/password"
+        app:boxStrokeColor="@color/teal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail">
@@ -107,6 +109,7 @@
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
@@ -120,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="end"
-        android:text="Already a member? Login"
+        android:text="@string/already_a_member"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,10 +138,10 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="68dp"
-        android:background="@drawable/corner_radius"
-        android:backgroundTint="#14565e"
-        android:text="SIGN UP"
+        android:backgroundTint="@color/teal"
         android:textColor="@color/white"
+        android:text="@string/sign_up"
+        android:background="@drawable/corner_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAlreadyMember" />
@@ -203,9 +206,9 @@
         android:layout_marginStart="88dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="88dp"
-        android:backgroundTint="#14565e"
+        android:backgroundTint="@color/teal"
         android:drawableLeft="@drawable/google"
-        android:text="Google Sign in"
+        android:text="@string/google_signIn"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
