@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="welcme"
+    android:textSize="30sp"
+    android:gravity="center"
+    android:id="@+id/welcome"
+    tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_below="@+id/welcome"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:id="@+id/name"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:text="mail"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:id="@+id/mail"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mail"
+        android:text="Logout"
+        android:id="@+id/logout"
+        tools:ignore="MissingConstraints" />
+
+</RelativeLayout>

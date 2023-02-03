@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "921996870082",
+    "project_id": "my-doc-7f231",
+    "storage_bucket": "my-doc-7f231.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921996870082:android:9fdb83a3fc804a5abe565b",
+        "android_client_info": {
+          "package_name": "com.devedroy.mydoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921996870082-g6ep8knjmntsdpd76cqhe3ir86rokk8g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Is_7zXiJS9ZgC-uo9cPY8OpqIXWf_Ak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921996870082-g6ep8knjmntsdpd76cqhe3ir86rokk8g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
