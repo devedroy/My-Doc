@@ -1,4 +1,4 @@
-package com.devedroy.mydoc;
+package com.devedroy.mydoc.homepage;
 
 public class DemoData {
     private String name;

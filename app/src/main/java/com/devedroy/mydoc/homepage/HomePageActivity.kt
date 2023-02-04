@@ -1,12 +1,11 @@
 package com.devedroy.mydoc.homepage
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.devedroy.mydoc.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.devedroy.mydoc.databinding.ActivityHomePageBinding
 
-class HomePage : AppCompatActivity() {
-
+class HomePageActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomePageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +16,11 @@ class HomePage : AppCompatActivity() {
     }
 
     private fun configureHospitalAdapter() {
-        TODO("Not yet implemented")
+        val myListData: List<DemoData>? = null //install data from ViewModel
+
+        val mRecyclerDemoAdapter: RecyclerDemoAdapter =
+            RecyclerDemoAdapter(this, myListData)
+        binding.rvHospitals.adapter = mRecyclerDemoAdapter
+        binding.rvHospitals.layoutManager = LinearLayoutManager(this)
     }
 }
