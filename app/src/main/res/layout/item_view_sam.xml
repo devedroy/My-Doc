@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#90C3DA">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/itmview"
+            app:cardCornerRadius="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hsptl"
+                android:id="@+id/itmview1">
+
+            </ImageView>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:id="@+id/textview1"
+            android:text="Hospitals"
+            android:textSize="24sp"
+            android:layout_toRightOf="@id/itmview"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/textview2"
+            android:text="------------------------------------------------------------"
+            android:textSize="24sp"
+            android:layout_below="@id/itmview"
+            android:layout_toRightOf="@id/itmview1"
+            android:layout_marginTop="-5dp"
+            android:layout_marginLeft="80dp"
+            tools:ignore="NotSibling">
+
+        </TextView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
