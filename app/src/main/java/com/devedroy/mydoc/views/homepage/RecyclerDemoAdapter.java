@@ -1,4 +1,4 @@
-package com.devedroy.mydoc.homepage;
+package com.devedroy.mydoc.views.homepage;
 
 import android.content.Context;
 import android.view.LayoutInflater;
