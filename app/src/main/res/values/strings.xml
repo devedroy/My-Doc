@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Doc</string>
+    <string name="itemview1">Hospitals</string>
+    <string name="itemview2">Departments</string>
+    <string name="itemview3">Surgeries</string>
+    <string name="itemview4">Tests</string>
 </resources>
