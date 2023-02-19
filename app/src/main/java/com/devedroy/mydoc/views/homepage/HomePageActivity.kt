@@ -26,14 +26,16 @@ class HomePageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomePageBinding
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
     private val permissionId = 2
-    private val TAG = "activity"
+    private val TAG = "HomePageActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         getLocation()
+
         configureHospitalAdapter()
         configureDepartmentsAdapter()
         configureTestsAdapter()
@@ -64,7 +66,7 @@ class HomePageActivity : AppCompatActivity() {
                     val location: Location? = it.result
                     if (location != null) {
                         val geocoder = Geocoder(this, Locale.getDefault())
-                        val list: kotlin.collections.List<Address> =
+                        val list: List<Address> =
                             geocoder.getFromLocation(
                                 location.latitude,
                                 location.longitude,
@@ -73,15 +75,8 @@ class HomePageActivity : AppCompatActivity() {
 
                         Log.d(TAG, "latitude ${list[0].latitude}")
                         Log.d(TAG, "longitude ${list[0].longitude}")
-                        //binding.apply {
-                        /* tvLatitude.text = "Latitude\n${list[0].latitude}"
-                         tvLongitude.text = "Longitude\n${list[0].longitude}"
-                         tvCountryName.text = "Country Name\n${list[0].countryName}"*/
-                        //  tvLocalityShow.text = list[0].locality
+
                         binding.tvCurrentLocation.text = list[0].getAddressLine(0)
-
-                        //  }
-
                     }
                 }
             } else {
@@ -120,8 +115,8 @@ class HomePageActivity : AppCompatActivity() {
         ActivityCompat.requestPermissions(
             this,
             arrayOf(
-                android.Manifest.permission.ACCESS_COARSE_LOCATION,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION
             ),
             permissionId
         )
