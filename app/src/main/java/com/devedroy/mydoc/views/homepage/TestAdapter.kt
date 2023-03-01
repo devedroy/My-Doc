@@ -1,24 +1,43 @@
 package com.devedroy.mydoc.views.homepage
 
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
+import com.devedroy.mydoc.R
+import com.devedroy.mydoc.data.local.Test
 
-class TestAdapter : RecyclerView.Adapter<TestAdapter.TestViewModel>() {
+class TestAdapter(
+    private val context: Context,
+    private val dataset: List<Test>?
+) : RecyclerView.Adapter<TestAdapter.TestViewModel>() {
     class TestViewModel(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+        val textViewName: TextView = itemView.findViewById(R.id.name)
+        val textViewCost: TextView = itemView.findViewById(R.id.cost)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestViewModel {
-        TODO("Not yet implemented")
+        val adapterLayout =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_view_tests, parent, false)
+        return TestViewModel(adapterLayout)
     }
 
     override fun onBindViewHolder(holder: TestViewModel, position: Int) {
-        TODO("Not yet implemented")
+        val item = dataset?.get(position)
+        if (item != null) {
+            holder.textViewName.text = item.name
+        }
+        if (item != null) {
+            holder.textViewCost.text = item.cost.toString()
+        }
+
+
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return dataset?.size ?: 0
     }
 }
