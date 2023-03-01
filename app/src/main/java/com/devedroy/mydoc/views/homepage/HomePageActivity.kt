@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devedroy.mydoc.data.local.Department
+import com.devedroy.mydoc.data.local.Surgery
 import com.devedroy.mydoc.data.local.Test
 import com.devedroy.mydoc.databinding.ActivityHomePageBinding
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -41,6 +42,14 @@ class HomePageActivity : AppCompatActivity() {
         configureHospitalAdapter()
         configureDepartmentsAdapter()
         configureTestsAdapter()
+        configureSurgeryAdapter()
+    }
+
+    private fun configureSurgeryAdapter() {
+        val mSurgeryData:List<Surgery>? = null
+        val mRecyclerSurgeryAdapter = SurgeryAdapter(this,mSurgeryData)
+       binding.rvSurgeries.adapter = mRecyclerSurgeryAdapter
+        binding.rvSurgeries.layoutManager=LinearLayoutManager(this)
     }
 
     private fun configureDepartmentsAdapter() {
