@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="#E4E2E3"
-    >
+    tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_marginTop="100dp"
-        app:cardElevation="10dp"
         app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
         app:cardUseCompatPadding="true">
 
         <LinearLayout
@@ -23,27 +22,33 @@
             android:elevation="20dp">
 
             <ImageView
-                android:layout_marginTop="40dp"
-                android:layout_marginLeft="20dp"
+                android:id="@+id/imgtests"
                 android:layout_width="60dp"
                 android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/tests"
-                android:id="@+id/imgtests"
-                >
+                android:src="@drawable/tests">
 
             </ImageView>
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/testtv"
-                android:text="@string/itemview4"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_marginLeft="20dp"
+                android:textSize="24sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textSize="24sp"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

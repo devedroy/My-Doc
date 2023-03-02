@@ -16,6 +16,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.devedroy.mydoc.data.local.Department
+import com.devedroy.mydoc.data.local.Surgery
+import com.devedroy.mydoc.data.local.Test
 import com.devedroy.mydoc.databinding.ActivityHomePageBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -39,14 +42,29 @@ class HomePageActivity : AppCompatActivity() {
         configureHospitalAdapter()
         configureDepartmentsAdapter()
         configureTestsAdapter()
+        configureSurgeryAdapter()
+    }
+
+    private fun configureSurgeryAdapter() {
+        val mSurgeryData:List<Surgery>? = null
+        val mRecyclerSurgeryAdapter = SurgeryAdapter(this,mSurgeryData)
+       binding.rvSurgeries.adapter = mRecyclerSurgeryAdapter
+        binding.rvSurgeries.layoutManager=LinearLayoutManager(this)
     }
 
     private fun configureDepartmentsAdapter() {
-        TODO("Not yet implemented")
+        val myDataSet: List<Department>? = null
+        val mRecyclerDepartmentAdapter = DepartmentAdapter(this, myDataSet)
+        binding.rvTests.adapter = mRecyclerDepartmentAdapter
+        binding.rvTests.layoutManager = LinearLayoutManager(this)
     }
 
     private fun configureTestsAdapter() {
-        TODO("Not yet implemented")
+        val myDataSet: List<Test>? = null
+        val mRecyclerTestAdapter = TestAdapter(this, myDataSet)
+        binding.rvTests.adapter = mRecyclerTestAdapter
+        binding.rvTests.layoutManager = LinearLayoutManager(this)
+
     }
 
     private fun configureHospitalAdapter() {
