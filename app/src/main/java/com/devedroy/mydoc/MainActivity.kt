@@ -2,6 +2,7 @@ package com.devedroy.mydoc
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.devedroy.mydoc.databinding.ActivityMainBinding
 
@@ -13,5 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         startActivity(Intent(this@MainActivity, SignUpActivity::class.java))
+
     }
 }
