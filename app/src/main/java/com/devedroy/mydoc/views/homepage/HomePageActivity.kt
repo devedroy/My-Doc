@@ -16,7 +16,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.devedroy.mydoc.data.fillDepartmentData
+import com.devedroy.mydoc.data.fillHospitalData
+import com.devedroy.mydoc.data.fillSurgeriesData
+import com.devedroy.mydoc.data.fillTestData
 import com.devedroy.mydoc.data.local.Department
+import com.devedroy.mydoc.data.local.Hospital
 import com.devedroy.mydoc.data.local.Surgery
 import com.devedroy.mydoc.data.local.Test
 import com.devedroy.mydoc.databinding.ActivityHomePageBinding
@@ -41,40 +47,41 @@ class HomePageActivity : AppCompatActivity() {
 
         configureHospitalAdapter()
         configureDepartmentsAdapter()
-        configureTestsAdapter()
         configureSurgeryAdapter()
+        configureTestsAdapter()
     }
 
     private fun configureSurgeryAdapter() {
-        val mSurgeryData:List<Surgery>? = null
-        val mRecyclerSurgeryAdapter = SurgeryAdapter(this,mSurgeryData)
-       binding.rvSurgeries.adapter = mRecyclerSurgeryAdapter
-        binding.rvSurgeries.layoutManager=LinearLayoutManager(this)
+        val mSurgeryData: List<Surgery> = fillSurgeriesData()
+        val mRecyclerSurgeryAdapter = SurgeryAdapter(mSurgeryData)
+        binding.rvSurgeries.adapter = mRecyclerSurgeryAdapter
+        binding.rvSurgeries.layoutManager = LinearLayoutManager(this)
     }
 
     private fun configureDepartmentsAdapter() {
-        val myDataSet: List<Department>? = null
-        val mRecyclerDepartmentAdapter = DepartmentAdapter(this, myDataSet)
+        val myDataSet: List<Department> = fillDepartmentData()
+        val mRecyclerDepartmentAdapter = DepartmentAdapter(myDataSet)
         binding.rvTests.adapter = mRecyclerDepartmentAdapter
         binding.rvTests.layoutManager = LinearLayoutManager(this)
     }
 
     private fun configureTestsAdapter() {
-        val myDataSet: List<Test>? = null
-        val mRecyclerTestAdapter = TestAdapter(this, myDataSet)
+        val myDataSet: List<Test> = fillTestData()
+        val mRecyclerTestAdapter = TestAdapter(myDataSet)
         binding.rvTests.adapter = mRecyclerTestAdapter
         binding.rvTests.layoutManager = LinearLayoutManager(this)
 
     }
 
     private fun configureHospitalAdapter() {
-        val myListData: List<DemoData>? = null //install data from ViewModel
+        val myListData: List<Hospital> = fillHospitalData()
 
-        val mRecyclerDemoAdapter = RecyclerDemoAdapter(this, myListData)
-        binding.rvHospitals.adapter = mRecyclerDemoAdapter
+        val mRecyclerHospitalAdapter = RecyclerHospitalAdapter(
+            this, myListData
+        )
+        binding.rvHospitals.adapter = mRecyclerHospitalAdapter
         binding.rvHospitals.layoutManager = LinearLayoutManager(this)
     }
-
 
     @SuppressLint("MissingPermission", "SetTextI18n")
     private fun getLocation() {
@@ -84,12 +91,9 @@ class HomePageActivity : AppCompatActivity() {
                     val location: Location? = it.result
                     if (location != null) {
                         val geocoder = Geocoder(this, Locale.getDefault())
-                        val list: List<Address> =
-                            geocoder.getFromLocation(
-                                location.latitude,
-                                location.longitude,
-                                1
-                            ) as List<Address>
+                        val list: List<Address> = geocoder.getFromLocation(
+                            location.latitude, location.longitude, 1
+                        ) as List<Address>
 
                         Log.d(TAG, "latitude ${list[0].latitude}")
                         Log.d(TAG, "longitude ${list[0].longitude}")
@@ -119,8 +123,7 @@ class HomePageActivity : AppCompatActivity() {
     private fun checkPermissions(): Boolean {
         if (ActivityCompat.checkSelfPermission(
                 this, Manifest.permission.ACCESS_COARSE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED &&
-            ActivityCompat.checkSelfPermission(
+            ) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
                 this, Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
@@ -131,20 +134,15 @@ class HomePageActivity : AppCompatActivity() {
 
     private fun requestPermissions() {
         ActivityCompat.requestPermissions(
-            this,
-            arrayOf(
-                Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ),
-            permissionId
+            this, arrayOf(
+                Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION
+            ), permissionId
         )
     }
 
     @SuppressLint("MissingSuperCall")
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
+        requestCode: Int, permissions: Array<String>, grantResults: IntArray
     ) {
         if (requestCode == permissionId) {
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {

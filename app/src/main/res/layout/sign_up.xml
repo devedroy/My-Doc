@@ -129,7 +129,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btSignUp"
+        android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
@@ -159,7 +159,7 @@
         app:layout_constraintEnd_toEndOf="@+id/glLeft"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -174,7 +174,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glRight"
@@ -192,7 +192,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/glRight"
-        app:layout_constraintTop_toBottomOf="@+id/btSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
