@@ -16,7 +16,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.devedroy.mydoc.data.fillDepartmentData
+import com.devedroy.mydoc.data.fillHospitalData
+import com.devedroy.mydoc.data.fillSurgeriesData
+import com.devedroy.mydoc.data.fillTestData
 import com.devedroy.mydoc.data.local.Department
+import com.devedroy.mydoc.data.local.Hospital
 import com.devedroy.mydoc.data.local.Surgery
 import com.devedroy.mydoc.data.local.Test
 import com.devedroy.mydoc.databinding.ActivityHomePageBinding
@@ -41,37 +47,39 @@ class HomePageActivity : AppCompatActivity() {
 
         configureHospitalAdapter()
         configureDepartmentsAdapter()
-        configureTestsAdapter()
         configureSurgeryAdapter()
+        configureTestsAdapter()
     }
 
     private fun configureSurgeryAdapter() {
-        val mSurgeryData: List<Surgery>? = null
-        val mRecyclerSurgeryAdapter = SurgeryAdapter(this, mSurgeryData)
+        val mSurgeryData: List<Surgery> = fillSurgeriesData()
+        val mRecyclerSurgeryAdapter = SurgeryAdapter(mSurgeryData)
         binding.rvSurgeries.adapter = mRecyclerSurgeryAdapter
         binding.rvSurgeries.layoutManager = LinearLayoutManager(this)
     }
 
     private fun configureDepartmentsAdapter() {
-        val myDataSet: List<Department>? = null
-        val mRecyclerDepartmentAdapter = DepartmentAdapter(this, myDataSet)
+        val myDataSet: List<Department> = fillDepartmentData()
+        val mRecyclerDepartmentAdapter = DepartmentAdapter(myDataSet)
         binding.rvTests.adapter = mRecyclerDepartmentAdapter
         binding.rvTests.layoutManager = LinearLayoutManager(this)
     }
 
     private fun configureTestsAdapter() {
-        val myDataSet: List<Test>? = null
-        val mRecyclerTestAdapter = TestAdapter(this, myDataSet)
+        val myDataSet: List<Test> = fillTestData()
+        val mRecyclerTestAdapter = TestAdapter(myDataSet)
         binding.rvTests.adapter = mRecyclerTestAdapter
         binding.rvTests.layoutManager = LinearLayoutManager(this)
 
     }
 
     private fun configureHospitalAdapter() {
-        val myListData: List<DemoData>? = null //install data from ViewModel
+        val myListData: List<Hospital> = fillHospitalData()
 
-        val mRecyclerDemoAdapter = RecyclerDemoAdapter(this, myListData)
-        binding.rvHospitals.adapter = mRecyclerDemoAdapter
+        val mRecyclerHospitalAdapter = RecyclerHospitalAdapter(
+            this, myListData
+        )
+        binding.rvHospitals.adapter = mRecyclerHospitalAdapter
         binding.rvHospitals.layoutManager = LinearLayoutManager(this)
     }
 

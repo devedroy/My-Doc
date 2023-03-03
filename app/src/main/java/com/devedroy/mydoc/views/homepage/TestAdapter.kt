@@ -1,18 +1,15 @@
 package com.devedroy.mydoc.views.homepage
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.devedroy.mydoc.R
 import com.devedroy.mydoc.data.local.Test
 
 class TestAdapter(
-    private val context: Context,
-    private val dataset: List<Test>?
+    private val dataset: List<Test>
 ) : RecyclerView.Adapter<TestAdapter.TestViewModel>() {
     class TestViewModel(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textViewName: TextView = itemView.findViewById(R.id.name)
@@ -26,18 +23,12 @@ class TestAdapter(
     }
 
     override fun onBindViewHolder(holder: TestViewModel, position: Int) {
-        val item = dataset?.get(position)
-        if (item != null) {
-            holder.textViewName.text = item.name
-        }
-        if (item != null) {
-            holder.textViewCost.text = item.cost.toString()
-        }
-
-
+        val item = dataset[position]
+        holder.textViewName.text = item.name
+        holder.textViewCost.text = item.cost.toString()
     }
 
     override fun getItemCount(): Int {
-        return dataset?.size ?: 0
+        return dataset.size
     }
 }

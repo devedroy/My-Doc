@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="#E4E2E3"
-    >
+    tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_marginTop="100dp"
-        app:cardElevation="10dp"
         app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
         app:cardUseCompatPadding="true">
 
         <LinearLayout
@@ -23,26 +22,23 @@
             android:elevation="20dp">
 
             <ImageView
-                android:layout_marginTop="40dp"
-                android:layout_marginLeft="20dp"
+                android:id="@+id/ivDept"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/dept"
-                android:id="@+id/imgdept"
-                >
-
-            </ImageView>
+                android:src="@drawable/dept" />
 
             <TextView
+                android:id="@+id/depttv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/depttv"
-                android:textSize="24sp"
-                android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_marginLeft="20dp"
+                android:text="Dentist"
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
