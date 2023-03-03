@@ -46,10 +46,10 @@ class HomePageActivity : AppCompatActivity() {
     }
 
     private fun configureSurgeryAdapter() {
-        val mSurgeryData:List<Surgery>? = null
-        val mRecyclerSurgeryAdapter = SurgeryAdapter(this,mSurgeryData)
-       binding.rvSurgeries.adapter = mRecyclerSurgeryAdapter
-        binding.rvSurgeries.layoutManager=LinearLayoutManager(this)
+        val mSurgeryData: List<Surgery>? = null
+        val mRecyclerSurgeryAdapter = SurgeryAdapter(this, mSurgeryData)
+        binding.rvSurgeries.adapter = mRecyclerSurgeryAdapter
+        binding.rvSurgeries.layoutManager = LinearLayoutManager(this)
     }
 
     private fun configureDepartmentsAdapter() {
@@ -75,7 +75,6 @@ class HomePageActivity : AppCompatActivity() {
         binding.rvHospitals.layoutManager = LinearLayoutManager(this)
     }
 
-
     @SuppressLint("MissingPermission", "SetTextI18n")
     private fun getLocation() {
         if (checkPermissions()) {
@@ -84,12 +83,9 @@ class HomePageActivity : AppCompatActivity() {
                     val location: Location? = it.result
                     if (location != null) {
                         val geocoder = Geocoder(this, Locale.getDefault())
-                        val list: List<Address> =
-                            geocoder.getFromLocation(
-                                location.latitude,
-                                location.longitude,
-                                1
-                            ) as List<Address>
+                        val list: List<Address> = geocoder.getFromLocation(
+                            location.latitude, location.longitude, 1
+                        ) as List<Address>
 
                         Log.d(TAG, "latitude ${list[0].latitude}")
                         Log.d(TAG, "longitude ${list[0].longitude}")
@@ -119,8 +115,7 @@ class HomePageActivity : AppCompatActivity() {
     private fun checkPermissions(): Boolean {
         if (ActivityCompat.checkSelfPermission(
                 this, Manifest.permission.ACCESS_COARSE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED &&
-            ActivityCompat.checkSelfPermission(
+            ) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
                 this, Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
@@ -131,20 +126,15 @@ class HomePageActivity : AppCompatActivity() {
 
     private fun requestPermissions() {
         ActivityCompat.requestPermissions(
-            this,
-            arrayOf(
-                Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ),
-            permissionId
+            this, arrayOf(
+                Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION
+            ), permissionId
         )
     }
 
     @SuppressLint("MissingSuperCall")
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
+        requestCode: Int, permissions: Array<String>, grantResults: IntArray
     ) {
         if (requestCode == permissionId) {
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
